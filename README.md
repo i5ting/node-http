@@ -167,6 +167,23 @@ app.listen(3000)
 
 ![](img/post-rawdata.png)
 
+## 命令行玩法
+
+```
+#! /bin/bash
+
+echo -n "post common"
+curl -d "a=1&b=2" http://127.0.0.1:3001/users/post
+
+echo -n 'post formdata'
+curl -F 'pic=@"img/post-common.png"' -F 'a=1' -F 'b=2'  http://127.0.0.1:3001/users/post/formdata
+
+echo -n 'post raw json'
+
+curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/post
+```
+
+
 # node express upgrade
 
 As part of the 3.x -> 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.
