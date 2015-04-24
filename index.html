@@ -1,0 +1,304 @@
+
+	    <html>
+	      <head>
+				  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	        <title>README</title>
+					
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+			
+				  <style>
+					pre {
+					    counter-reset: line-numbering;
+					    border: solid 1px #d9d9d9;
+					    border-radius: 0;
+					    background: #fff;
+					    padding: 0;
+					    line-height: 23px;
+					    margin-bottom: 30px;
+					    white-space: pre;
+					    overflow-x: auto;
+					    word-break: inherit;
+					    word-wrap: inherit;
+					}
+
+					pre a::before {
+					  content: counter(line-numbering);
+					  counter-increment: line-numbering;
+					  padding-right: 1em; /* space after numbers */
+					  width: 25px;
+					  text-align: right;
+					  opacity: 0.7;
+					  display: inline-block;
+					  color: #aaa;
+					  background: #eee;
+					  margin-right: 16px;
+					  padding: 2px 10px;
+					  font-size: 13px;
+					  -webkit-touch-callout: none;
+					  -webkit-user-select: none;
+					  -khtml-user-select: none;
+					  -moz-user-select: none;
+					  -ms-user-select: none;
+					  user-select: none;
+					}
+
+					pre a:first-of-type::before {
+					  padding-top: 10px;
+					}
+
+					pre a:last-of-type::before {
+					  padding-bottom: 10px;
+					}
+
+					pre a:only-of-type::before {
+					  padding: 10px;
+					}
+			
+					.highlight { background-color: #ffffcc } /* RIGHT */
+					</style>
+	      </head>
+	      <body>
+				  <div>
+							<div style='width:25%;'>
+									<ul id="tree" class="ztree" style='width:100%'>
+		
+									</ul>
+							</div>
+			        <div id='readme' style='width:70%;margin-left:20%;'>
+			          	<article class='markdown-body'>
+			            	<style>.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f0f0f0; }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+<h1>node-http</h1>
+
+<h2>准备工作</h2>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">express</span><span class="p">();</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">multer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;multer&#39;)</span>
+
+<span class="o">//</span><span class="w"> </span><span class="vg">for</span><span class="w"> </span><span class="vg">raw</span><span class="w"> </span><span class="vg">data</span>
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">req</span><span class="p">,</span><span class="w"> </span><span class="vg">res</span><span class="p">,</span><span class="w"> </span><span class="vg">next</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">is</span><span class="p">(</span><span class="c1">&#39;text/*&#39;)) {</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="c1">&#39;&#39;;</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">setEncoding</span><span class="p">(</span><span class="c1">&#39;utf8&#39;);</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">on</span><span class="p">(</span><span class="c1">&#39;data&#39;, function(chunk){ req.text += chunk });</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">on</span><span class="p">(</span><span class="c1">&#39;end&#39;, next);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="vg">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">multer</span><span class="p">({</span><span class="w"> </span>
+<span class="w">    </span><span class="nl">dest:</span><span class="w"> </span><span class="c1">&#39;./uploads/&#39;,</span>
+<span class="w">  </span><span class="nl">rename:</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">fieldname</span><span class="p">,</span><span class="w"> </span><span class="vg">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">return</span><span class="w"> </span><span class="vg">filename</span><span class="o">.</span><span class="vg">replace</span><span class="p">(</span><span class="o">/\</span><span class="vg">W</span><span class="o">+/</span><span class="vg">g</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;-&#39;).toLowerCase() + Date.now()</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}))</span>
+</pre></div>
+<p>说明</p>
+
+<ul>
+<li>express4之后上传组件使用multer</li>
+<li>express4之前是由req.text的，但不知道是什么原因在4里取消了。</li>
+</ul>
+
+<h2>3种不同类型的post</h2>
+<div class="highlight"><pre><span class="n">var</span> <span class="n">express</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="c">&#39;express&#39;);</span>
+<span class="n">var</span> <span class="n">router</span> <span class="o">=</span> <span class="n">express</span><span class="p">.</span><span class="n">Router</span><span class="p">()</span><span class="err">;</span>
+
+<span class="o">/*</span> <span class="k">GET</span> <span class="n">users</span> <span class="n">listing</span><span class="p">.</span> <span class="o">*/</span>
+<span class="n">router</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="c">&#39;/&#39;, function(req, res) {</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="c">&#39;respond with a resource&#39;);</span>
+<span class="p">})</span><span class="err">;</span>
+
+<span class="n">router</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="c">&#39;/:id&#39;, function(req, res) {</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="c">&#39;respond with a resource&#39; + request.params.id);</span>
+<span class="p">})</span><span class="err">;</span>
+
+<span class="n">router</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="c">&#39;/post&#39;, function(req, res) {</span>
+  <span class="o">//</span> <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="c">&#39;respond with a resource&#39;);</span>
+    <span class="n">res</span><span class="p">.</span><span class="n">json</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">body</span><span class="p">)</span><span class="err">;</span>
+<span class="p">})</span><span class="err">;</span>
+
+<span class="n">router</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="c">&#39;/post/formdata&#39;, function(req, res) {</span>
+  <span class="o">//</span> <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="c">&#39;respond with a resource&#39;);</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">body</span><span class="p">,</span> <span class="n">req</span><span class="p">.</span><span class="n">files</span><span class="p">)</span><span class="err">;</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">pic</span><span class="p">.</span><span class="n">path</span><span class="p">)</span><span class="err">;</span>
+    <span class="n">res</span><span class="p">.</span><span class="n">json</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">body</span><span class="p">)</span><span class="err">;</span>
+<span class="p">})</span><span class="err">;</span>
+
+<span class="n">router</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="c">&#39;/post/raw&#39;, function(req, res) {</span>
+  <span class="o">//</span> <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="c">&#39;respond with a resource&#39;);</span>
+    <span class="n">res</span><span class="p">.</span><span class="n">json</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">text</span><span class="p">)</span><span class="err">;</span>
+<span class="p">})</span><span class="err">;</span>
+
+
+<span class="n">module</span><span class="p">.</span><span class="n">exports</span> <span class="o">=</span> <span class="n">router</span><span class="err">;</span>
+</pre></div>
+<h3>Post with x-www-form-urlencoded</h3>
+
+<p>see post.html</p>
+<div class="highlight"><pre>    <span class="nt">&lt;script&gt;</span>
+    $(function(){
+        $.ajaxSetup({
+          contentType: &quot;application/x-www-form-urlencoded; charset=utf-8&quot;
+        });
+
+        $.post(&quot;/users/post&quot;, { name: &quot;i5a6&quot;, time: &quot;2pm&quot; },
+           function(data){
+             console.log(data);
+           }, &quot;json&quot;);
+
+    });
+    <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+<p>in routes/users.js</p>
+<div class="highlight"><pre><span class="w">    </span><span class="vg">router</span><span class="o">.</span><span class="vg">post</span><span class="p">(</span><span class="c1">&#39;/post&#39;, function(req, res) {</span>
+<span class="w">      </span><span class="o">//</span><span class="w"> </span><span class="vg">res</span><span class="o">.</span><span class="vg">send</span><span class="p">(</span><span class="c1">&#39;respond with a resource&#39;);</span>
+<span class="w">        </span><span class="vg">res</span><span class="o">.</span><span class="vg">json</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">body</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+</pre></div>
+<p><img src="doc/post-common.png" alt=""></p>
+
+<h3>Post with form-data</h3>
+<div class="highlight"><pre><span class="vg">npm</span><span class="w"> </span><span class="vg">install</span><span class="w"> </span><span class="o">--</span><span class="vg">save</span><span class="w"> </span><span class="vg">multer</span>
+</pre></div>
+<p>Usage</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;express&#39;)</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">multer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;multer&#39;)</span>
+
+<span class="vg">var</span><span class="w"> </span><span class="vg">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">express</span><span class="p">()</span>
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">multer</span><span class="p">({</span><span class="w"> </span><span class="nl">dest:</span><span class="w"> </span><span class="c1">&#39;./uploads/&#39;}))</span>
+</pre></div>
+<p>You can access the fields and files in the request object:</p>
+<div class="highlight"><pre><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">body</span><span class="p">)</span>
+<span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">files</span><span class="p">)</span>
+</pre></div>
+<p>IMPORTANT: Multer will not process any form which is not multipart/form-data</p>
+
+<p><a href="https://github.com/expressjs/multer">see more</a></p>
+
+<p><img src="doc/post-formdata.png" alt=""></p>
+
+<h3>Post with raw</h3>
+
+<p>To get the raw body content of a request with Content-Type: &quot;text/plain&quot; into req.rawBody you can do:</p>
+
+<p>https://gist.github.com/tj/3750227</p>
+
+<p>req.rawBody已经被干掉了，现在只能用req.text</p>
+
+<p>下面是tj给出的代码片段</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;./&#39;)</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">express</span><span class="p">();</span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">req</span><span class="p">,</span><span class="w"> </span><span class="vg">res</span><span class="p">,</span><span class="w"> </span><span class="vg">next</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">is</span><span class="p">(</span><span class="c1">&#39;text/*&#39;)) {</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="c1">&#39;&#39;;</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">setEncoding</span><span class="p">(</span><span class="c1">&#39;utf8&#39;);</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">on</span><span class="p">(</span><span class="c1">&#39;data&#39;, function(chunk){ req.text += chunk });</span>
+<span class="w">    </span><span class="vg">req</span><span class="o">.</span><span class="vg">on</span><span class="p">(</span><span class="c1">&#39;end&#39;, next);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="vg">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">post</span><span class="p">(</span><span class="c1">&#39;/&#39;, function(req, res){</span>
+<span class="w">  </span><span class="vg">res</span><span class="o">.</span><span class="vg">send</span><span class="p">(</span><span class="c1">&#39;got &quot;&#39; + req.text + &#39;&quot;&#39;);</span>
+<span class="p">});</span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">listen</span><span class="p">(</span><span class="il">3000</span><span class="p">)</span>
+</pre></div>
+<p><img src="doc/post-rawdata.png" alt=""></p>
+
+<h2>node express upgrade</h2>
+
+<p>As part of the 3.x -&gt; 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.</p>
+
+<p>If you want to use multipart/form-data as the request body, you need to use the multer middleware.</p>
+
+			          	</article>
+			        </div>
+					</div>
+	      </body>
+	    </html>
+			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+      <script type="text/javascript" src="toc/toc_conf.js"></script>
+      
+			<SCRIPT type="text/javascript" >
+			<!--
+			$(document).ready(function(){
+          var css_conf = eval(markdown_panel_style);
+          $('#readme').css(css_conf)
+          
+          var conf = eval(jquery_ztree_toc_opts);
+  				$('#tree').ztree_toc(conf);
+
+				
+			});
+			//-->
+			</SCRIPT>
+	  
