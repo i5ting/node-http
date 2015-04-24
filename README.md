@@ -99,7 +99,7 @@ in routes/users.js
 	});
 ```
 
-![](doc/post-common.png)
+![](img/post-common.png)
 
 ### Post with form-data
 
@@ -129,7 +129,7 @@ IMPORTANT: Multer will not process any form which is not multipart/form-data
 [see more](https://github.com/expressjs/multer)
 
 
-![](doc/post-formdata.png)
+![](img/post-formdata.png)
 
 ### Post with raw
 
@@ -165,7 +165,7 @@ app.post('/', function(req, res){
 app.listen(3000)
 ```
 
-![](doc/post-rawdata.png)
+![](img/post-rawdata.png)
 
 # node express upgrade
 
