@@ -184,9 +184,13 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 ```
 
 
+
+
 # node express upgrade
 
 As part of the 3.x -> 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.
 
 If you want to use multipart/form-data as the request body, you need to use the multer middleware.
 
+
+- [404](http://stackoverflow.com/questions/6528876/how-to-redirect-404-errors-to-a-page-in-expressjs)
