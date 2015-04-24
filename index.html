@@ -272,6 +272,19 @@
 </pre></div>
 <p><img src="img/post-rawdata.png" alt=""></p>
 
+<h2>命令行玩法</h2>
+<div class="highlight"><pre><span class="c">#! /bin/bash</span>
+
+<span class="nb">echo</span> -n <span class="s2">&quot;post common&quot;</span>
+curl -d <span class="s2">&quot;a=1&amp;b=2&quot;</span> http://127.0.0.1:3001/users/post
+
+<span class="nb">echo</span> -n <span class="s1">&#39;post formdata&#39;</span>
+curl -F <span class="s1">&#39;pic=@&quot;img/post-common.png&quot;&#39;</span> -F <span class="s1">&#39;a=1&#39;</span> -F <span class="s1">&#39;b=2&#39;</span>  http://127.0.0.1:3001/users/post/formdata
+
+<span class="nb">echo</span> -n <span class="s1">&#39;post raw json&#39;</span>
+
+curl -d <span class="s2">&quot;{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;,&quot;</span>c<span class="s2">&quot;:{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;}}&quot;</span> http://127.0.0.1:3001/users/post
+</pre></div>
 <h1>node express upgrade</h1>
 
 <p>As part of the 3.x -&gt; 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.</p>
