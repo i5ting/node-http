@@ -133,6 +133,136 @@
 .highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
 <h1>node-http</h1>
 
+<h2>绝对地址和相对地址</h2>
+
+<p>http://jingyan.baidu.com/article/9225544683537d851648f4e0.html</p>
+
+<h2>querystring</h2>
+
+<p>http://zhidao.baidu.com/link?url=M9_<em>pYJ44i4SvL8E_4o7tT9g_qhKuplPxmnl5-c8NOt-jApN6XSbQCfxCUXn</em>pDygPS2znebrpd-EwcPuc6J9a</p>
+
+<h2>url 和 uri</h2>
+
+<p>http://www.cnblogs.com/gaojing/archive/2012/02/04/2413626.html</p>
+
+<h2>http status code</h2>
+
+<p>http://www.restapitutorial.com/httpstatuscodes.html</p>
+
+<p>https://github.com/nodejs/io.js/blob/master/lib/_http_server.js</p>
+
+<ul>
+<li> 500 : &#39;Internal Server Error&#39;,</li>
+<li> 403 : &#39;Forbidden&#39;,</li>
+<li> 404 : &#39;Not Found&#39;,</li>
+<li> 304 : &#39;Not Modified&#39;,</li>
+<li> 200 : &#39;OK&#39;,</li>
+</ul>
+
+<h2>http verbs</h2>
+
+<p>verbs = 动词</p>
+
+<p>http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html</p>
+
+<ul>
+<li>get</li>
+<li>post</li>
+<li>delete</li>
+<li>put</li>
+</ul>
+<div class="highlight"><pre><span class="c1">// respond with &quot;Hello World!&quot; on the homepage</span>
+<span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(&#39;</span><span class="o">/</span><span class="nl">user:</span><span class="n">id</span><span class="p">&#39;,</span> <span class="k">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(&#39;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">!</span><span class="p">&#39;);</span>
+<span class="p">});</span>
+
+<span class="c1">// accept POST request on the homepage</span>
+<span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(&#39;</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">create</span><span class="p">&#39;,</span> <span class="k">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(&#39;</span><span class="n">Got</span> <span class="n">a</span> <span class="no">POST</span> <span class="n">request</span><span class="p">&#39;);</span>
+<span class="p">});</span>
+
+<span class="c1">// accept PUT request at /user</span>
+<span class="n">app</span><span class="p">.</span><span class="n">put</span><span class="p">(&#39;</span><span class="o">/</span><span class="n">user</span><span class="o">/:</span><span class="n">id</span><span class="p">&#39;,</span> <span class="k">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(&#39;</span><span class="n">Got</span> <span class="n">a</span> <span class="no">PUT</span> <span class="n">request</span> <span class="n">at</span> <span class="o">/</span><span class="n">user</span><span class="p">&#39;);</span>
+<span class="p">});</span>
+
+<span class="c1">// accept DELETE request at /user</span>
+<span class="n">app</span><span class="p">.</span><span class="n">delete</span><span class="p">(&#39;</span><span class="o">/</span><span class="n">user</span><span class="o">/:</span><span class="n">id</span><span class="p">&#39;,</span> <span class="k">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(&#39;</span><span class="n">Got</span> <span class="n">a</span> <span class="no">DELETE</span> <span class="n">request</span> <span class="n">at</span> <span class="o">/</span><span class="n">user</span><span class="p">&#39;);</span>
+<span class="p">});</span>
+</pre></div>
+<h2>req取参数的3种方法</h2>
+
+<p>expressjs里的请求参数，4.x里只有3种</p>
+
+<ul>
+<li>req.params</li>
+<li>req.body</li>
+<li>req.query</li>
+</ul>
+
+<p>已经废弃的api</p>
+
+<ul>
+<li>req.param(Deprecated. Use either req.params, req.body or req.query, as applicable.)</li>
+</ul>
+
+<h3>req.params</h3>
+<div class="highlight"><pre><span class="vg">app</span><span class="o">.</span><span class="vg">get</span><span class="p">(</span><span class="c1">&#39;/user/:id&#39;, function(req, res){</span>
+<span class="w">  </span><span class="vg">res</span><span class="o">.</span><span class="vg">send</span><span class="p">(</span><span class="c1">&#39;user &#39; + req.params.id);</span>
+<span class="p">});</span>
+</pre></div>
+<p>俗点：取带冒号的参数</p>
+
+<h3>req.body</h3>
+
+<p>Contains key-value pairs of data submitted in the request body. By default, it is undefined, and is populated when you use body-parsing middleware such as body-parser and multer.</p>
+
+<p>This example shows how to use body-parsing middleware to populate req.body.</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;express&#39;)();</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;body-parser&#39;);</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">multer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;multer&#39;); </span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">bodyParser</span><span class="o">.</span><span class="vg">json</span><span class="p">());</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">for</span><span class="w"> </span><span class="vg">parsing</span><span class="w"> </span><span class="vg">application</span><span class="o">/</span><span class="vg">json</span>
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">bodyParser</span><span class="o">.</span><span class="vg">urlencoded</span><span class="p">({</span><span class="w"> </span><span class="nl">extended:</span><span class="w"> </span><span class="vg">true</span><span class="w"> </span><span class="p">}));</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">for</span><span class="w"> </span><span class="vg">parsing</span><span class="w"> </span><span class="vg">application</span><span class="o">/</span><span class="vg">x</span><span class="o">-</span><span class="vg">www</span><span class="o">-</span><span class="vg">form</span><span class="o">-</span><span class="vg">urlencoded</span>
+<span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">multer</span><span class="p">());</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">for</span><span class="w"> </span><span class="vg">parsing</span><span class="w"> </span><span class="vg">multipart</span><span class="o">/</span><span class="vg">form</span><span class="o">-</span><span class="vg">data</span>
+
+<span class="vg">app</span><span class="o">.</span><span class="vg">post</span><span class="p">(</span><span class="c1">&#39;/&#39;, function (req, res) {</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">body</span><span class="p">);</span>
+<span class="w">  </span><span class="vg">res</span><span class="o">.</span><span class="vg">json</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">body</span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+<p>可以肯定的一点是req.body一定是post请求，express里依赖的中间件必须有bodyParser，不然req.body是没有的。</p>
+
+<p>详细的说明在下面的3种post用法里。</p>
+
+<h3>req.query</h3>
+
+<p>query是querystring</p>
+
+<p>说明req.query不一定是get</p>
+<div class="highlight"><pre><span class="c1">// GET /search?q=tobi+ferret</span>
+<span class="n">req</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">q</span>
+<span class="c1">// =&gt; &quot;tobi ferret&quot;</span>
+
+<span class="c1">// GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse</span>
+<span class="n">req</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">order</span>
+<span class="c1">// =&gt; &quot;desc&quot;</span>
+
+<span class="n">req</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">shoe</span><span class="p">.</span><span class="n">color</span>
+<span class="c1">// =&gt; &quot;blue&quot;</span>
+
+<span class="n">req</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">shoe</span><span class="p">.</span><span class="k">type</span>
+<span class="c1">// =&gt; &quot;converse&quot;</span>
+</pre></div>
+<p>因为有变态的写法</p>
+<div class="highlight"><pre><span class="c1">// POST /search?q=tobi+ferret</span>
+<span class="p">{</span><span class="nl">a:</span><span class="mh">1</span><span class="p">,</span><span class="nl">b:</span><span class="mh">2</span><span class="p">}</span>
+<span class="n">req</span><span class="p">.</span><span class="n">query</span><span class="p">.</span><span class="n">q</span>
+<span class="c1">// =&gt; &quot;tobi ferret&quot;</span>
+</pre></div>
+<p>post里看不的，用req.body取。</p>
+
 <h2>准备工作</h2>
 <div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">express</span><span class="p">();</span>
 <span class="vg">var</span><span class="w"> </span><span class="vg">multer</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;multer&#39;)</span>
@@ -222,6 +352,8 @@
 <p><img src="img/post-common.png" alt=""></p>
 
 <h3>Post with form-data</h3>
+
+<p>主要目的是为了上传</p>
 <div class="highlight"><pre><span class="vg">npm</span><span class="w"> </span><span class="vg">install</span><span class="w"> </span><span class="o">--</span><span class="vg">save</span><span class="w"> </span><span class="vg">multer</span>
 </pre></div>
 <p>Usage</p>
@@ -235,7 +367,7 @@
 <div class="highlight"><pre><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">body</span><span class="p">)</span>
 <span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">req</span><span class="o">.</span><span class="vg">files</span><span class="p">)</span>
 </pre></div>
-<p>IMPORTANT: Multer will not process any form which is not multipart/form-data</p>
+<p>重要提示： Multer will not process any form which is not multipart/form-data</p>
 
 <p><a href="https://github.com/expressjs/multer">see more</a></p>
 
@@ -285,11 +417,23 @@ curl -F <span class="s1">&#39;pic=@&quot;img/post-common.png&quot;&#39;</span> -
 
 curl -d <span class="s2">&quot;{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;,&quot;</span>c<span class="s2">&quot;:{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;}}&quot;</span> http://127.0.0.1:3001/users/post
 </pre></div>
+<p>如不清楚，请 <code>man curl</code>.</p>
+
 <h1>node express upgrade</h1>
 
 <p>As part of the 3.x -&gt; 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.</p>
 
 <p>If you want to use multipart/form-data as the request body, you need to use the multer middleware.</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/6528876/how-to-redirect-404-errors-to-a-page-in-expressjs">404</a></li>
+</ul>
+
+<h2>what is rest?</h2>
+
+<p>http://www.ruanyifeng.com/blog/2011/09/restful.html</p>
+
+<p>http://www.restapitutorial.com/lessons/whatisrest.html</p>
 
 			          	</article>
 			        </div>
