@@ -1,5 +1,10 @@
 # node-http
 
+## 科普
+
+绝对地址和相对地址
+
+querystring
 
 ## http status code
 
@@ -17,6 +22,66 @@ http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 - req.param(Deprecated. Use either req.params, req.body or req.query, as applicable.)
 
 
+### req.params
+
+```
+app.get('/user/:id', function(req, res){
+  res.send('user ' + req.params.id);
+});
+```
+
+### req.body
+
+Contains key-value pairs of data submitted in the request body. By default, it is undefined, and is populated when you use body-parsing middleware such as body-parser and multer.
+
+This example shows how to use body-parsing middleware to populate req.body.
+
+```
+var app = require('express')();
+var bodyParser = require('body-parser');
+var multer = require('multer'); 
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(multer()); // for parsing multipart/form-data
+
+app.post('/', function (req, res) {
+  console.log(req.body);
+  res.json(req.body);
+})
+```
+
+可以肯定的一点是req.body一定是post请求，express里依赖的中间件必须有bodyParser，不然req.body是没有的。
+
+详细的说明在下面的3种post用法里。
+
+### req.query
+
+说明req.query不一定是get
+
+```
+// GET /search?q=tobi+ferret
+req.query.q
+// => "tobi ferret"
+
+// GET /shoes?order=desc&shoe[color]=blue&shoe[type]=converse
+req.query.order
+// => "desc"
+
+req.query.shoe.color
+// => "blue"
+
+req.query.shoe.type
+// => "converse"
+```
+
+因为有变态的写法
+
+```
+// POST /search?q=tobi+ferret
+req.query.q
+// => "tobi ferret"
+```
 
 ## 准备工作
 
