@@ -15,11 +15,49 @@ http://www.cnblogs.com/gaojing/archive/2012/02/04/2413626.html
 
 ## http status code
 
+http://www.restapitutorial.com/httpstatuscodes.html
+
 https://github.com/nodejs/io.js/blob/master/lib/_http_server.js
+
+-  500 : 'Internal Server Error',
+-  403 : 'Forbidden',
+-  404 : 'Not Found',
+-  304 : 'Not Modified',
+-  200 : 'OK',
 
 ## http verbs
 
+verbs = 动词
+
 http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+
+- get
+- post
+- delete
+- put
+
+
+```
+// respond with "Hello World!" on the homepage
+app.get('/user:id', function (req, res) {
+  res.send('Hello World!');
+});
+
+// accept POST request on the homepage
+app.post('/user/create', function (req, res) {
+  res.send('Got a POST request');
+});
+
+// accept PUT request at /user
+app.put('/user/:id', function (req, res) {
+  res.send('Got a PUT request at /user');
+});
+
+// accept DELETE request at /user
+app.delete('/user/:id', function (req, res) {
+  res.send('Got a DELETE request at /user');
+});
+```
 
 ## req取参数的3种方法
 
@@ -28,6 +66,10 @@ expressjs里的请求参数，4.x里只有3种
 - req.params
 - req.body
 - req.query
+
+
+已经废弃的api
+
 - req.param(Deprecated. Use either req.params, req.body or req.query, as applicable.)
 
 
@@ -38,6 +80,8 @@ app.get('/user/:id', function(req, res){
   res.send('user ' + req.params.id);
 });
 ```
+
+俗点：取带冒号的参数
 
 ### req.body
 
@@ -66,6 +110,8 @@ app.post('/', function (req, res) {
 
 ### req.query
 
+query是querystring
+
 说明req.query不一定是get
 
 ```
@@ -88,9 +134,12 @@ req.query.shoe.type
 
 ```
 // POST /search?q=tobi+ferret
+{a:1,b:2}
 req.query.q
 // => "tobi ferret"
 ```
+
+post里看不的，用req.body取。
 
 ## 准备工作
 
@@ -195,6 +244,7 @@ in routes/users.js
 
 ### Post with form-data
 
+主要目的是为了上传
 
 	npm install --save multer
 
@@ -216,7 +266,7 @@ console.log(req.body)
 console.log(req.files)
 ```
 
-IMPORTANT: Multer will not process any form which is not multipart/form-data
+重要提示： Multer will not process any form which is not multipart/form-data
 
 [see more](https://github.com/expressjs/multer)
 
@@ -274,6 +324,8 @@ echo -n 'post raw json'
 
 curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/post
 ```
+
+如不清楚，请 `man curl`.
 
 # node express upgrade
 
