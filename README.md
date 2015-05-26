@@ -1,10 +1,17 @@
 # node-http
 
-## 科普
+## 绝对地址和相对地址
 
-绝对地址和相对地址
+http://jingyan.baidu.com/article/9225544683537d851648f4e0.html
 
-querystring
+
+## querystring
+
+http://zhidao.baidu.com/link?url=M9__pYJ44i4SvL8E_4o7tT9g_qhKuplPxmnl5-c8NOt-jApN6XSbQCfxCUXn_pDygPS2znebrpd-EwcPuc6J9a
+
+## url 和 uri
+
+http://www.cnblogs.com/gaojing/archive/2012/02/04/2413626.html
 
 ## http status code
 
@@ -14,7 +21,9 @@ https://github.com/nodejs/io.js/blob/master/lib/_http_server.js
 
 http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 
-## req
+## req取参数的3种方法
+
+expressjs里的请求参数，4.x里只有3种
 
 - req.params
 - req.body
@@ -266,9 +275,6 @@ echo -n 'post raw json'
 curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/post
 ```
 
-
-
-
 # node express upgrade
 
 As part of the 3.x -> 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.
@@ -281,5 +287,7 @@ If you want to use multipart/form-data as the request body, you need to use the 
 
 ## what is rest?
 
+http://www.ruanyifeng.com/blog/2011/09/restful.html
 
 http://www.restapitutorial.com/lessons/whatisrest.html
+
