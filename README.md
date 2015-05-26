@@ -1,5 +1,23 @@
 # node-http
 
+
+## http status code
+
+https://github.com/nodejs/io.js/blob/master/lib/_http_server.js
+
+## http verbs
+
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+
+## req
+
+- req.params
+- req.body
+- req.query
+- req.param(Deprecated. Use either req.params, req.body or req.query, as applicable.)
+
+
+
 ## 准备工作
 
 ```
