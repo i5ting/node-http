@@ -327,6 +327,12 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 
 如不清楚，请 `man curl`.
 
+
+## supertest用法
+
+稍后补上
+
+
 # node express upgrade
 
 As part of the 3.x -> 4.x changes, the middleware for processing multipart/form-data request body data was removed from the bodyParser middleware, so it only parses application/x-www-form-urlencoded and application/json request body data.
@@ -342,4 +348,6 @@ If you want to use multipart/form-data as the request body, you need to use the 
 http://www.ruanyifeng.com/blog/2011/09/restful.html
 
 http://www.restapitutorial.com/lessons/whatisrest.html
+
+
 
