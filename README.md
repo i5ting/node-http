@@ -330,7 +330,9 @@ curl -d "{"a":"1","b":"2","c":{"a":"1","b":"2"}}" http://127.0.0.1:3001/users/po
 
 ## supertest用法
 
-稍后补上
+稍后补上（柯织）
+
+https://github.com/visionmedia/supertest
 
 
 # node express upgrade
