@@ -191,6 +191,8 @@
   <span class="n">res</span><span class="p">.</span><span class="n">send</span><span class="p">(&#39;</span><span class="n">Got</span> <span class="n">a</span> <span class="no">DELETE</span> <span class="n">request</span> <span class="n">at</span> <span class="o">/</span><span class="n">user</span><span class="p">&#39;);</span>
 <span class="p">});</span>
 </pre></div>
+<p>更多node里的verbs实行，见 https://github.com/jshttp/methods/blob/master/index.js</p>
+
 <h2>req取参数的3种方法</h2>
 
 <p>expressjs里的请求参数，4.x里只有3种</p>
@@ -418,6 +420,12 @@ curl -F <span class="s1">&#39;pic=@&quot;img/post-common.png&quot;&#39;</span> -
 curl -d <span class="s2">&quot;{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;,&quot;</span>c<span class="s2">&quot;:{&quot;</span>a<span class="s2">&quot;:&quot;</span>1<span class="s2">&quot;,&quot;</span>b<span class="s2">&quot;:&quot;</span>2<span class="s2">&quot;}}&quot;</span> http://127.0.0.1:3001/users/post
 </pre></div>
 <p>如不清楚，请 <code>man curl</code>.</p>
+
+<h2>supertest用法</h2>
+
+<p>稍后补上（柯织）</p>
+
+<p>https://github.com/visionmedia/supertest</p>
 
 <h1>node express upgrade</h1>
 
