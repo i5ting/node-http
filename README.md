@@ -59,6 +59,8 @@ app.delete('/user/:id', function (req, res) {
 });
 ```
 
+更多node里的verbs实行，见 https://github.com/jshttp/methods/blob/master/index.js
+
 ## req取参数的3种方法
 
 expressjs里的请求参数，4.x里只有3种
