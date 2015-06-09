@@ -357,5 +357,6 @@ http://www.ruanyifeng.com/blog/2011/09/restful.html
 
 http://www.restapitutorial.com/lessons/whatisrest.html
 
+下面这篇也不错，科普了很多东西
 
-
+https://github.com/nodeonly/http-api-guide
